@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EVO-AI ChatBot | Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: white !important;
+    }
+
+    .navbar .nav-link {
+      color: white !important;
+      margin-left: 15px;
+    }
+
+    .glass-btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 0 transparent;
+    }
+
+    .glass-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
+      transform: scale(1.05);
+    }
+
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px #000;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .section .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.05);
+      color: #aaa;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Button Styling */
+    .navbar-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    @media (max-width: 576px) {
+      .navbar-buttons {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#">EVO-AI</a>
+    <div class="ms-auto navbar-buttons">
+      <a href="{{ url_for('login') }}" class="glass-btn nav-link">Login</a>
+      <a href="{{ url_for('register') }}" class="glass-btn nav-link">Register</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+  <h1>Welcome to EVO-AI ChatBot</h1>
+  <p>Where artificial intelligence meets human simplicity.</p>
+  <a href="{{ url_for('chatbot') }}" class="glass-btn mt-3">Start Chatting</a>
+</div>
+
+<!-- About Section -->
+<section class="section" id="about">
+  <div class="container">
+    <h2>About EVO-AI</h2>
+    <p>
+      EVO-AI is a dynamic chatbot platform built using Flask, MongoDB, and the GPT-Neo model to simulate intelligent responses.
+      With integrated factual query detection and memory-based context, it delivers both informative and conversational replies.
+    </p>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section" id="features">
+  <div class="container">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Context-Aware AI Responses</li>
+      <li>Google SERP API for factual queries</li>
+      <li>MongoDB storage for chat history</li>
+      <li>Login & Register authentication system</li>
+      <li>Responsive UI with smooth animations</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Architecture Section -->
+<section class="section" id="architecture">
+  <div class="container">
+    <h2>System Architecture</h2>
+    <p>
+      The system includes a Flask backend that routes user messages to a decision module. Based on the query type,
+      responses are generated via GPT-Neo or fetched through Google Search. All chats are stored securely in MongoDB.
+    </p>
+  </div>
+</section>
+
+<!-- AI Integration Section -->
+<section class="section" id="ai">
+  <div class="container">
+    <h2>AI Model Integration</h2>
+    <p>
+      GPT-Neo, an open-source transformer-based model from EleutherAI, is used to generate human-like conversations.
+      It is deployed using PyTorch with DirectML (GPU-supported) for improved performance and inference speed.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p>Have questions or suggestions? Reach us at: evoai.support@email.com</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 EVO-AI ChatBot. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

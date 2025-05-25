@@ -1,0 +1,7 @@
+Flask
+transformers
+torch
+torch_directml
+google-search-results
+openai
+python-dotenv

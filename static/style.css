@@ -1,0 +1,141 @@
+/* General styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  color: #fff;
+  background-image: url("../images/bg-watermark.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header, .chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1, .chat-header h1 {
+  color: #0040ff;
+  font-size: 2rem;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00ccff;
+}
+
+/* Chat Container */
+.chat-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.glassmorphic-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 1.5rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.2);
+  height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* Chat Messages */
+.message {
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  max-width: 80%;
+  word-wrap: break-word;
+  line-height: 1.5;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.user-msg {
+  background: rgba(0, 128, 255, 0.3);
+  align-self: flex-end;
+  text-align: right;
+}
+
+.ai-msg {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #0040ff;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* Chat Input Form */
+.chat-form {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.chat-form button {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #0040ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-form button:hover {
+  background-color: #0020aa;
+}
+
+/* Footer */
+.chat-footer, footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #aaa;
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chat-form {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin-left: 1rem;
+  }
+}
